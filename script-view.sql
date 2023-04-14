@@ -70,16 +70,14 @@ SELECT nomeusuario, admissao, nomeprofissao, descricaocargo, nomefantasiaempresa
 -- parte 1, passando como parâmetro o código do usuário.
 
 DELIMITER %%
+CREATE PROCEDURE procPerProf(codUser int)
 BEGIN
 
+SELECT nomeusuario, nomeprofissao, descricaocargo FROM PerProf
+WHERE idusuario = codUser;
 
-
-
-;
 END %%
 DELIMITER ;
 
+CALL procPerProf(1);
     
-
-    
-	
